@@ -29,7 +29,7 @@ categories: spring
 
 > UsernamePasswordAuthenticationToken는 Authentication를 구현한 AbstractAuthenticationToken의 하위클래스 중 하나이며 일반적인 인증 시 Authentication의 구현체로 사용된다.
 
-> 위 이미지에서 User는 Spring Security에서 제공하는 UserDetails의 구현 클래스이다.
+> User는 Spring Security에서 제공하는 UserDetails의 구현 클래스이다.
 
 ## Reference
 - <https://springbootdev.com/2017/08/23/spring-security-authentication-architecture/>
