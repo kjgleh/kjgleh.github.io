@@ -11,7 +11,7 @@ testImplementation 'org.springframework.security:spring-security-test'
 ```
 
 ## Spring boot Security 자동 설정
-자동 설정 클래스는 SecurityAutoConfiguration이다. <br/>
+자동 설정 클래스는 SecurityAutoConfiguration이다.  
 SecurityAutoConfiguration은 SpringBootWebSecurityConfiguration 클래스를 import하고 있다.
 
 ```java
@@ -140,9 +140,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     }
 }
 ```
-PasswordEncoderFactories.createDelegatingPasswordEncoder()는 DelegatingPasswordEncoder를 생성한다. <br/>
-여러가지 이유로 암호화 알고리즘을 변경해야 하는데 DelegatingPasswordEncoder가 알아서 적당한 알고리즘을 적용해준다.
-<br/>Spring Security 5.3.4 기준으로 Bcrypt가 기본 암호화 알고리즘으로 사용된다.
+PasswordEncoderFactories.createDelegatingPasswordEncoder()는 DelegatingPasswordEncoder를 생성한다.  
+여러가지 이유로 암호화 알고리즘을 변경해야 하는데 DelegatingPasswordEncoder가 알아서 적당한 알고리즘을 적용해준다.  
+Spring Security 5.3.4 기준으로 Bcrypt가 기본 암호화 알고리즘으로 사용된다.
 
 #### UserDetailsService 구현
 Account Entity
