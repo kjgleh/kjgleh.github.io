@@ -42,18 +42,18 @@ docker-compose up -d
 ```
 
 참고)AWS 서비스별 포트
-4567:4567   # apigateway
-4568:4568   # kinesis
-4569:4569   # dynamodb
-4570:4570   # dynamodbstreams
-4571:4571   # elasticache
-4572:4572   # s3
-4573:4573   # firehose
-4574:4574   # lambda
-4576:4576   # sqs
-4597:4597   # ec2
+- 4567:4567   # apigateway
+- 4568:4568   # kinesis
+- 4569:4569   # dynamodb
+- 4570:4570   # dynamodbstreams
+- 4571:4571   # elasticache
+- 4572:4572   # s3
+- 4573:4573   # firehose
+- 4574:4574   # lambda
+- 4576:4576   # sqs
+- 4597:4597   # ec2
 
-아래 에러가 발생하면 도커 설정을 변경해 준다.
+## 아래 에러 발생 시
 ```
 ERROR: for localstack  Cannot create container for service localstack: C: drive is not shared. Please share it in Docker for Windows Settings
 Encountered errors while bringing up the project.
@@ -63,7 +63,7 @@ Encountered errors while bringing up the project.
 ```text
 set COMPOSE_CONVERT_WINDOWS_PATHS=1
 ```
-도커를 재시작한 도커 설정을 변경한다.
+도커를 재시작한 도커 설정을 변경한다.  
 Go to Docker for Windows settings > Shared Drives > Reset credentials > select drive > Apply
 
 도커의 localstack 컨테이너를 삭제하고 재시작한다.
