@@ -181,7 +181,7 @@ java.lang.NullPointerException
 at com.amazonaws.services.dynamodbv2.datamodeling.StandardBeanProperties$MethodReflect.set(StandardBeanProperties.java:133)
 ```
 
-## Date 타입만 지원하기 때문에 LocalDateTime 사용시 아래와 같은 에러가 발생한다.
+## Date 타입만 지원하기 때문에 LocalDateTime 사용시 에러가 발생한다.
 ```text
 not supported; requires @DynamoDBTyped or @DynamoDBTypeConverted
 ```
