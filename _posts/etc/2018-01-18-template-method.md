@@ -1,5 +1,5 @@
 ---
-title: '[디자인 패턴] Template Method Pattern'
+title: '[Design Pattern] Template Method Pattern'
 layout: post
 categories: etc
 ---

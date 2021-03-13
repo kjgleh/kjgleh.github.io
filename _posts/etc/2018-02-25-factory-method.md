@@ -1,5 +1,5 @@
 ---
-title: '[디자인 패턴] Factory Method Pattern'
+title: '[Design Pattern] Factory Method Pattern'
 layout: post
 categories: etc
 ---
