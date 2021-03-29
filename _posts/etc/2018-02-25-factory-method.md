@@ -20,6 +20,7 @@ public abstract class Factory {
         return product;
     }
 
+    // 팩토리 메서드
     protected abstract Product createProduct(String owner);
     
     protected abstract void registerProduct(Product product);
@@ -32,6 +33,7 @@ public class IDCardFactory extends Factory {
 
     private List owners = new ArrayList();
     
+    // 인스턴스 생성
     protected Product createProduct(String owner) {
         return new IDCard(owner);
     }
