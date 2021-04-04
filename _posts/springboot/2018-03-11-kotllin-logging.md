@@ -51,7 +51,7 @@ logback-spring.xml에서 설정한 logger를 사용하여 logging
 @Component
 class SampleService {
     
-    companion object : NamedKLogging("TEST_CONSOLE")
+    companion object : NamedKLogging("MY_LOGGER")
 
     fun hello() {
         logger.info("info...")
