@@ -50,7 +50,16 @@ spring:
 
 ```
 
-## Configuration
+## application-prod.yml
+```yaml
+cloud:
+    aws:
+        credentials:
+            accessKey: accessKey
+            secretKey: secretKey
+```
+
+## local configuration
 ```kotlin
 @Configuration
 @Profile("local")
@@ -82,6 +91,38 @@ class DynamoDBLocalConfig {
                 )
             )
             .withCredentials(localStackContainer.defaultCredentialsProvider)
+            .build()
+    }
+}
+```
+
+## prod configuration
+```kotlin
+@Configuration
+@Profile("prod")
+@EnableDynamoDBRepositories(basePackages = ["me.kjgleh.springdatadynamodb.order"])
+class DynamoDBConfig(
+    @Value("\${amazon.aws.accessKey}")
+    private var amazonAwsAccessKey: String,
+    @Value("\${amazon.aws.secretKey}")
+    private var amazonAwsSecretKey: String
+) {
+
+    @Bean
+    @Primary
+    fun dynamoDBMapper(amazonDynamoDB: AmazonDynamoDB): DynamoDBMapper {
+        return DynamoDBMapper(amazonDynamoDB, DynamoDBMapperConfig.DEFAULT)
+    }
+
+    @Bean
+    fun amazonDynamoDB(): AmazonDynamoDB {
+        val credentialsProvider = AWSStaticCredentialsProvider(
+            BasicAWSCredentials(amazonAwsAccessKey, amazonAwsSecretKey)
+        )
+
+        return AmazonDynamoDBClientBuilder.standard()
+            .withCredentials(credentialsProvider)
+            .withRegion(Regions.AP_NORTHEAST_2)
             .build()
     }
 }
@@ -186,5 +227,11 @@ at com.amazonaws.services.dynamodbv2.datamodeling.StandardBeanProperties$MethodR
 not supported; requires @DynamoDBTyped or @DynamoDBTypeConverted
 ```
 
-
+## EC2 metadata resolution related exception thrown when running application locally
+- <https://github.com/spring-cloud/spring-cloud-aws/issues/556>
+```kotlin
+@Configuration
+@EnableAutoConfiguration(exclude = [ContextInstanceDataAutoConfiguration::class])
+class AutoConfigCustom
+```
 
