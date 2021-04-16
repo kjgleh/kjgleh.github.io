@@ -229,6 +229,7 @@ not supported; requires @DynamoDBTyped or @DynamoDBTypeConverted
 
 ## EC2 metadata resolution related exception thrown when running application locally
 - <https://github.com/spring-cloud/spring-cloud-aws/issues/556>
+
 ```kotlin
 @Configuration
 @EnableAutoConfiguration(exclude = [ContextInstanceDataAutoConfiguration::class])
