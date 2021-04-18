@@ -27,24 +27,20 @@ spring:
 
 ## 로그인 화면
 ```html
-{{>layout/header}}
-
 <div class="col-md-12">
     <div class="row">
         <div class="col-md-6">
-            {{#userName}}
-                Logged in as: <span id="user">{{userName}}</span>
+            // 로그인 된 경우
+                Logged in as: <span id="user">사용자 이름</span>
                 <a href="/logout" class="btn btn-info active" role="button">Logout</a>
-            {{/userName}}
-            {{^userName}}
+            // 로그인 된 경우
+            // 로그인 되지 않은 경우
                 <a href="/oauth2/authorization/google" class="btn btn-success active" role="button">Google Login</a>
-            {{/userName}}
+            // 로그인 되지 않은 경우
         </div>
     </div>
     <br>
 </div>
-
-{{>layout/footer}}
 ```
 - /oauth2/authorization/google: spring oauth2에서 제공하는 기본 로그인 경로
 - /logout: spring oauth2에서 제공하는 기본 로그아웃 경로
