@@ -1,7 +1,7 @@
 ---
 title: 'AWS Secret Manager로 property 관리'
 layout: post
-categories: spring
+categories: aws
 ---
 
 ## AWS console에서 Secret 생성

@@ -1,7 +1,7 @@
 ---
 title: 'AWS Secret Manager로 RDS 계정 및 비밀번호 관리'
 layout: post
-categories: spring
+categories: aws
 ---
 
 ## AWS console에서 Secret 생성
